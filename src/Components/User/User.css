@@ -1,0 +1,263 @@
+
+.userimage{
+    border-radius:50%;
+    width:150px;
+    height:200px;
+    padding:14px;
+}
+.gbi{
+  font-size:2rem;
+  font-weight: bolder;
+  color:purple;
+}
+.cx{
+  display: flex;
+  justify-content: space-evenly;
+}
+.ac1{
+  font-size:medium;
+  font-weight:normal;
+  padding: left 10px;
+}
+.ac{
+  font-size:medium;
+  font-weight:normal;
+}
+.someTitles{
+    color:blue;
+
+    text-shadow:2px 2px cyan;
+    font-size:2rem;
+    font-weight:bolder;
+}
+li{
+    list-style:none;
+}
+.google{
+    height:100px;
+    width:200px;
+    font-size:2rem;
+}
+.border{
+  border:1px solid black;
+}
+.just{
+    display:flex;
+    color:inherit;
+   
+    justify-content: space-around;
+}
+.vs{
+    font-size:2.3rem;
+}
+ .active{
+    color:blue;
+    font-weight:bolder;
+    font-size: xx-large;
+}
+.username{
+    text-align:center;
+}
+.bx{
+  box-shadow: 5px 10px whitesmoke;
+}
+.verified{
+    color:green;
+    font-size:xx-large;
+    height:100px;
+}
+.deepchanges{
+    border-radius:40px;
+    border:2px solid black;
+}
+.changex{
+    border-radius:12px;
+
+}
+.picker{
+    color:white;
+    background-color: black;
+}
+.inputsubs{
+    background:black;
+    color:cornsilk;
+
+}
+.heart{
+    
+    color:red;
+}
+.servicestitle{
+    
+}
+.title{
+    color:red;;
+    text-shadow:2px 2px orange;
+}
+
+.inputsub{
+    background:dodgerblue;
+    color:black;
+} 
+.bgc{
+    
+    /* margin-top:100px; */
+    box-sizing: border-box;
+    border-radius: 19px;
+}
+.set{
+    width:50%;
+    margin-left:25%;
+}
+.v{
+    border:2px dotted white;
+
+}
+.usernames{
+   
+    font-weight:bolder;
+    font-size:larger;
+    @media (max-width:768px){
+          font-size:xx-small;
+          font-weight:bolder;
+
+    }
+    
+}
+.mailicon{
+    color:inherit;
+    font-size:2rem;
+}
+.Setfont{
+    font-size:3rem;
+    font-weight:bolder;
+}
+.emaildetails,.mobiledetails{
+    border-radius:15px;
+    box-sizing:border-box;
+    background:linear-gradient(120deg,whitesmoke,lightblue 70%,whitesmoke);
+
+    font-weight:bolder;
+    font-size: large;
+}
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+  }
+  body{
+      color:#121212;
+  }
+  
+  /* CHECKED STYLES */
+  [type=radio]:checked + img {
+    outline: 2px dashed blue;
+  }
+  .spacealign{
+      display: flex;
+      justify-content: space-around;
+  }
+  .follow{
+      font-size:1.5rem;
+      font-weight:bolder;
+  }
+  .followed{
+    font-size:1.5rem;
+    font-weight:bolder;
+    background-color:cyan;
+    box-sizing:border-box;
+    border-radius:10px;
+  }
+  .copyurl{
+    font-size:0.9rem;
+    font-weight:bolder;
+    background-color:ghostwhite;
+    box-sizing:border-box;
+    border-radius:10px;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .sidekick {
+    position: relative;
+    padding-left: 1em;
+    border-left: 0.2em solid #039be5;
+    font-family: 'Roboto', serif;
+    font-size: 2.4em;
+    line-height: 1.5em;
+    font-weight: 100;
+  }
+  .sidekick:before, .sidekick:after {
+    font-family: Calibri;
+      color: #039be5;
+      font-size: 34px;
+  }
+  .bo{
+      border-left:5px solid blue;
+  }
+  .sidekick:before {content: '\201e'}
+  .sidekick:after {content: '\201c';}
+  .sidekick cite {font-size: 50%; text-align:center; top:50%}
+  .sidekick cite:before {content: ' \2015 '}
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color:grey;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

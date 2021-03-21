@@ -1,0 +1,56 @@
+{
+  "name": "front-end",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.2",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "country-list": "^2.2.0",
+    "fs": "0.0.1-security",
+    "jquery": "^3.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "mdbreact": "^5.0.1",
+    "popper.js": "^1.16.1",
+    "react": "^17.0.1",
+    "react-dark-mode-toggle": "^0.2.0",
+    "react-dom": "^17.0.1",
+    "react-google-login": "^5.2.2",
+    "react-jwt": "^1.1.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-select": "^4.1.0",
+    "react-select-country-list": "^2.2.3",
+    "react-simple-sidenav": "^2.0.0",
+    "web-vitals": "^1.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

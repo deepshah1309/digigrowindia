@@ -1,0 +1,46 @@
+.businessicon{
+    color:aquamarine;
+}
+.mainpart{
+    height:auto;
+    min-height:100%;
+    text-align:center;
+    overflow-x:hidden;
+}
+.firstPart{
+    text-align:center;
+}
+.editgooglelogin{
+    font-weight:bolder;
+   
+    margin:auto;
+}
+
+.min{
+    min-height:90vh;
+}
+.g-icon{
+   border-radius:4px;
+}
+.v{
+    font-size:2rem;
+}
+.google{
+
+    text-align:center;
+    border:5px solid blue;
+    
+}
+.bs{
+    box-sizing: border-box;
+    border-radius:20px;
+    
+}
+.rounds{
+    border-radius:10px;
+    font-size:1.3rem;
+}
+
+.textset{
+    color:purple;
+}
