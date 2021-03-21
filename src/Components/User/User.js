@@ -13,6 +13,7 @@ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import './User.css';
 
 function User(){
+    const urls="https://guarded-mountain-14262.herokuapp.com/";
     //const classes = useStyles();
     const { getName } = require('country-list');
     const [nos,setNos]=useState(true);
@@ -82,7 +83,7 @@ function User(){
    }
    useEffect(()=>{
         
-    axios.post('http://localhost:8000/api/getUserData',{ids:id},{withCredentials:true}).then(response=>{
+    axios.post(urls+"api/getUserData",{ids:id},{withCredentials:true}).then(response=>{
         console.log(response);
         setState({username:response.data.data[0].username,email:response.data.data[0].email,description:response.data.data[0].description,profileUrl:response.data.data[0].userimageurl,mobileno:response.data.data[0].mobileno,businessname:response.data.data[0].businessname,services:response.data.data[0].services,address:response.data.data[0].address,country:response.data.data[0].country,loginstatus:response.data.data[0].loginstatus});
         setLoading(true);
@@ -103,7 +104,7 @@ function User(){
    //follow and following functionality
    useEffect(()=>{
     if(auth===false && nos===false){
-        axios.post('http://localhost:8000/api/followcheckexist',{followedId:id},{withCredentials:true}).then(response=>{
+        axios.post(urls+"api/followcheckexist",{followedId:id},{withCredentials:true}).then(response=>{
             console.log(response);
             if(response.data.answerfromserver==="1"){
                     setFollowed(true);
@@ -120,7 +121,7 @@ function User(){
    
    const setuserfollowedBy=()=>{
        if(auth===false && nos===false){
-        axios.post('http://localhost:8000/api/followcheck',{followedId:id},{withCredentials:true}).then(response=>{
+        axios.post(urls+"api/followcheck",{followedId:id},{withCredentials:true}).then(response=>{
                 console.log(response);
                 if(response.data.messagefollower==="1"){
                         setFollowed(true);
@@ -140,7 +141,7 @@ function User(){
    }
    const addressSubmit=(e)=>{
        e.preventDefault();
-       axios.post('http://localhost:8000/changeaddress',{ids:id,address:address},{withCredentials:true}).then((response)=>{
+       axios.post(urls+"changeaddress",{ids:id,address:address},{withCredentials:true}).then((response)=>{
                 setState({...state,address:response.data.address});
                 setOpen(false);
        });
@@ -149,7 +150,7 @@ function User(){
        e.preventDefault();
        if(x.toString().length===10){
         console.log("now we can submit your request");
-        axios.post('http://localhost:8000/submitphonenumber',{Ids:id,phonenumber:x}).then((response)=>{
+        axios.post(urls+"submitphonenumber",{Ids:id,phonenumber:x}).then((response)=>{
             if(response.data.mobileno!=='' && response!=null){
             
                     setState({...state,mobileno:response.data.mobileno});
@@ -165,12 +166,12 @@ function User(){
    const logouthandle=()=>{
        localStorage.removeItem("OathToken");
        setAuthenticate(false);
-       axios.post('http://localhost:8000/logout',{},{withCredentials:true}).then((response)=>{console.log(response)});
+       axios.post(urls+"logout",{},{withCredentials:true}).then((response)=>{console.log(response)});
    }
    let businessname="";
    const submitBusiness=(e)=>{
         e.preventDefault();
-        axios.post('http://localhost:8000/usernamechangerequest',{sendId:id,userchange:businessname}).then(
+        axios.post(urls+"usernamechangerequest",{sendId:id,userchange:businessname}).then(
             (response)=>{
                 setState({...state,businessname:response.data.newbusiness});
                 setOpen(false);
@@ -182,7 +183,7 @@ function User(){
 
   
    useEffect(()=>{
-    axios.post("http://localhost:8000/api/countfollowers",{id:id}).then(response=>{
+    axios.post(urls+"api/countfollowers",{id:id}).then(response=>{
         console.log()
        if(response.status===200){
            setFollowers(response.data.counts);
@@ -196,7 +197,7 @@ function User(){
    }
    const [following,setFollowing]=useState(0);
    useEffect(()=>{
-       axios.post('http://localhost:8000/api/following',{id:id}).then((response)=>{
+       axios.post(urls+"api/following",{id:id}).then((response)=>{
            console.log(response);
            setFollowing(response.data.counts);
        })
@@ -219,7 +220,7 @@ function User(){
       const submitCountry=(e)=>{
             e.preventDefault();
             console.log("request for country change");
-            axios.post("http://localhost:8000/changecountry",{ids:id,countryname:value}).then((response)=>{
+            axios.post(urls+"changecountry",{ids:id,countryname:value}).then((response)=>{
                 
                 console.log(response);
                 setState({...state,country:response.data.country});
@@ -235,7 +236,7 @@ function User(){
       const serviceSubmit=(e)=>{
           e.preventDefault();
           if(services!==""){
-            axios.post('http://localhost:8000/changeservices',{ids:id,serviceso:services}).then((response)=>{
+            axios.post(urls+"changeservices",{ids:id,serviceso:services}).then((response)=>{
                     setState({...state,services:response.data.services});
                     setOpen(false);
           })
