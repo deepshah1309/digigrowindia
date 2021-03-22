@@ -11,6 +11,7 @@ import './Main.css';
 //   }
 function Main(){
     const urls="https://guarded-mountain-14262.herokuapp.com/";
+    const CLIENTID="496941184973-m0q8g3uns4uo9lgll6r9mq4jfh703a6j.apps.googleusercontent.com";
     const [state, setState] = useState({userstatusmessage:'welcome to business grow portal',userGoogleId:''});
     
     const responseSuccessGoogle=(response)=>{
@@ -67,7 +68,7 @@ function Main(){
                
             <GoogleLogin
             className="google" 
-    clientId="496941184973-m0q8g3uns4uo9lgll6r9mq4jfh703a6j.apps.googleusercontent.com"
+    clientId={CLIENTID}
     buttonText="Login With Google"
     onSuccess={responseSuccessGoogle}
     onFailure={responseErrorGoogle}
