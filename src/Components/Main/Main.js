@@ -37,10 +37,7 @@ function Main(){
         }
         else{
             console.log("sending Id:"+state.userGoogleId);
-            axios.post(urls+"users/login",{send:state.userGoogleId},{withCredentials:true}).then((response)=>{
-            console.log(response);    
-            const tokens=response.data.tokenValue;
-                
+            axios.post(urls+"users/login",{send:state.userGoogleId},{withCredentials:true}).then((response)=>{ 
                 setState({userstatusmessage:" you are authenticated and logged In we are going to navigate you to the profile page",userGoogleId:state.userGoogleId});
                 window.location='/user/'+state.userGoogleId;
             });
