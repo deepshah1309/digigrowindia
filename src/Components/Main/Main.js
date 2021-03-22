@@ -11,13 +11,13 @@ import './Main.css';
 //   }
 function Main(){
     const urls="https://guarded-mountain-14262.herokuapp.com/";
+    const CLIENTID="496941184973-m0q8g3uns4uo9lgll6r9mq4jfh703a6j.apps.googleusercontent.com";
     const [state, setState] = useState({userstatusmessage:'welcome to business grow portal',userGoogleId:''});
     
     const responseSuccessGoogle=(response)=>{
-            console.log(response);
-            console.log(response.tokenId);
+            
             const userObj=response.profileObj;
-            axios.post(urls+"api/googleLogin",{userObj}).then((responses)=>{
+            axios.post(urls+"api/googleLogin",{userObj},{withCredentials:true}).then((responses)=>{
                 console.log(responses);
     
                 if(responses.data.data==="done"){
@@ -37,13 +37,7 @@ function Main(){
         }
         else{
             console.log("sending Id:"+state.userGoogleId);
-            axios.post(urls+"users/login",{send:state.userGoogleId},{withCredentials:true}).then((response)=>{
-            console.log(response);    
-            const tokens=response.data.tokenValue;
-                console.log(tokens);
-                localStorage.setItem('OathToken', tokens);
-                const checktoken=localStorage.getItem('OathToken');
-                console.log(checktoken);
+            axios.post(urls+"users/login",{send:state.userGoogleId},{withCredentials:true}).then((response)=>{ 
                 setState({userstatusmessage:" you are authenticated and logged In we are going to navigate you to the profile page",userGoogleId:state.userGoogleId});
                 window.location='/user/'+state.userGoogleId;
             });
@@ -73,7 +67,7 @@ function Main(){
                
             <GoogleLogin
             className="google" 
-    clientId="496941184973-m0q8g3uns4uo9lgll6r9mq4jfh703a6j.apps.googleusercontent.com"
+    clientId={CLIENTID}
     buttonText="Login With Google"
     onSuccess={responseSuccessGoogle}
     onFailure={responseErrorGoogle}
