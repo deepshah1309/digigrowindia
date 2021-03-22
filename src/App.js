@@ -17,11 +17,11 @@ function App() {
             <Main/>
             <Footer/>
           </Route>
-          <Route exact path="https://digigrowindia.netlify.app/dashboard">
+          <Route exact path="/dashboard">
           <DashBoard/>
           <Footer/>
           </Route>
-          <Route exact path='https://digigrowindia.netlify.app/user/:id'>
+          <Route exact path='/user/:id'>
           
             <User/>
             <Footer/>
