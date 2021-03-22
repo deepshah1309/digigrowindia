@@ -15,8 +15,7 @@ function Main(){
     const [state, setState] = useState({userstatusmessage:'welcome to business grow portal',userGoogleId:''});
     
     const responseSuccessGoogle=(response)=>{
-            console.log(response);
-            console.log(response.tokenId);
+            
             const userObj=response.profileObj;
             axios.post(urls+"api/googleLogin",{userObj},{withCredentials:true}).then((responses)=>{
                 console.log(responses);
