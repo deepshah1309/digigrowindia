@@ -17,7 +17,7 @@ function Main(){
             console.log(response);
             console.log(response.tokenId);
             const userObj=response.profileObj;
-            axios.post(urls+"api/googleLogin",{userObj}).then((responses)=>{
+            axios.post(urls+"api/googleLogin",{userObj},{withCredentials:true}).then((responses)=>{
                 console.log(responses);
     
                 if(responses.data.data==="done"){
@@ -40,10 +40,7 @@ function Main(){
             axios.post(urls+"users/login",{send:state.userGoogleId},{withCredentials:true}).then((response)=>{
             console.log(response);    
             const tokens=response.data.tokenValue;
-                console.log(tokens);
-                localStorage.setItem('OathToken', tokens);
-                const checktoken=localStorage.getItem('OathToken');
-                console.log(checktoken);
+                
                 setState({userstatusmessage:" you are authenticated and logged In we are going to navigate you to the profile page",userGoogleId:state.userGoogleId});
                 window.location='/user/'+state.userGoogleId;
             });
