@@ -73,7 +73,7 @@ function Main(){
                
             <GoogleLogin
             className="google" 
-    clientId="496941184973-m0q8g3uns4uo9lgll6r9mq4jfh703a6j.apps.googleusercontent.com"
+    clientId={process.env.clientID}
     buttonText="Login With Google"
     onSuccess={responseSuccessGoogle}
     onFailure={responseErrorGoogle}
