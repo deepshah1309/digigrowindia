@@ -10,6 +10,7 @@ import './DashBoard.css';
 import axios from 'axios';
 
 const DashBoard = () => {
+  const urls="https://guarded-mountain-14262.herokuapp.com/";
   
   
   
@@ -19,7 +20,7 @@ const DashBoard = () => {
   });
   const [data,setData]=useState({});
   useEffect(()=>{
-    axios.get('http://localhost:8000/getAuthUser',{withCredentials:true}).then((response)=>{
+    axios.get(urls+"getAuthUser",{withCredentials:true}).then((response)=>{
         console.log(response);
         if(response.data.message==="failed"){
               setData({});
@@ -31,7 +32,7 @@ const DashBoard = () => {
   },[])
 
   useEffect(() => {
-    axios.get('http://localhost:8000/usersList').then((response) => {
+    axios.get(urls+"usersList").then((response) => {
       let data=Object.values(response.data);
      
     
